@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Predictor</title>
+</head>
+<body>
+    <h2>Iris Predictor - Scenario 3 (GitHub repo, Pipeline script from SCM)</h2>
+
+    <form action="/predict" method="post">
+        <input name="sepal_length" placeholder="Sepal length" required>
+        <input name="sepal_width" placeholder="Sepal width" required>
+        <input name="petal_length" placeholder="Petal length" required>
+        <input name="petal_width" placeholder="Petal width" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+
+    <p><a href="/records">View saved records</a></p>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# same project name in all 3 scenarios -> each deploy replaces the previous stack
+name: demo_project
+
+services:
+  dbapp:
+    build: ./dbapp
+    ports:
+      - "8001:8001"
+
+  webapp:
+    build: ./webapp
+    ports:
+      - "8000:8000"
+    depends_on:
+      - dbapp
